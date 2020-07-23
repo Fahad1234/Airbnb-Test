@@ -1,0 +1,15 @@
+{
+    "watchForFileChanges": false,
+    "chromeWebSecurity": false,
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "waitForAnimation": true,
+    "animationDistanceTreashold": 20,
+    "defaultCommandTimeout": 6000,
+    "execTimeout": 60000,
+    "pageLoadTimeout": 80000,
+    "requestTimeout": 15000,
+    "responseTimeout": 15000,
+    "video": true,
+    "failOnScope": false
+}

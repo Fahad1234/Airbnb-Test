@@ -1,0 +1,22 @@
+{
+  "name": "automaiton-assignment",
+  "version": "1.0.0",
+  "description": "Automation Assignment",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:update-snapshot": "cypress run --env updateSnapShots=true"
+  },
+  "keywords": [
+    "Automation",
+    "Zameen"
+  ],
+  "author": "Fahad Anayat Khan",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^4.11.0",
+    "cypress-image-snapshot": "^3.1.1",
+    "prettier": "^2.0.5"
+  }
+}
