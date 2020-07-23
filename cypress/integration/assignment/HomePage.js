@@ -30,7 +30,7 @@ function date_formatter(day,month,year) {
     return '' + year + '-' + (month<=9 ? '0' + month : month) + '-' + (day <= 9 ? '0' + day : day);
 }
 
-class InitialPage{
+class HomePage{
     static visit(){
         cy.visit(URL)
     }
@@ -67,5 +67,5 @@ class InitialPage{
         })
     }
 }
-export default InitialPage
+export default HomePage
 

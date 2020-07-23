@@ -1,11 +1,11 @@
-import InitialPage from './initialPage'
+import HomePage from './HomePage'
 describe('Results match search criteria', ()=>{
     before(()=>{
-        InitialPage.visit()
+        HomePage.visit()
     })
     it('Criteria and verification for Search', () => {
-        InitialPage.search()
-        InitialPage.verify()
+        HomePage.search()
+        HomePage.verify()
        
 
     })
