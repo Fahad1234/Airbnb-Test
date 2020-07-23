@@ -1,4 +1,5 @@
 import HomePage from './HomePage'
+import ResultPage from './ResultPage'
 describe('Results match search criteria', ()=>{
     before(()=>{
         HomePage.visit()
@@ -10,31 +11,12 @@ describe('Results match search criteria', ()=>{
 
     })
     it('Apply extra filters ',()=> {
-        cy.wait(3000)
-        cy.get('[data-testid=menuItemButton-dynamicMoreFilters]').should('be.visible')
-        cy.get('[data-testid=menuItemButton-dynamicMoreFilters]').click()
-        cy.get('#filterItem-stepper-min_bedrooms-0')
-            .children().last().should('be.visible')
-        cy.get('#filterItem-stepper-min_bedrooms-0').children().last().dblclick()
-        cy.get('#filterItem-stepper-min_bedrooms-0').children().last().dblclick()
-        cy.get('#filterItem-stepper-min_bedrooms-0').children().last().click()
-        cy.get('[data-testid="more-filters-modal-submit-button"]').click()
-        cy.wait(3000)
-        cy.get('div[itemprop="itemListElement"]').first().find('div').contains('bedrooms').then(($bedroom)=> {
-            
-            var bed = $bedroom.text()
-            console.log(bed)
-            var beds = parseInt(bed.split("·")[1])
-            expect(beds).to.be.at.least(5)
-        })
+        ResultPage.addBedroom()
+        ResultPage.verifyBedroom()
     })
     it('Color Change test', ()=> {
         
-        cy.get('div[itemprop="itemListElement"]').first().trigger('mouseover')
-        cy.get('button[data-veloute] div div').first().should('be.visible')
-        
-        //cy.get('[data-veloute="map/markers/BasePillMarker"]').should('be.visible')
-        //cy.get('[data-veloute="map/markers/BasePillMarker"]').first().click()
+        ResultPage.hoverAndColorChange()
     })
 
 })
